@@ -12,10 +12,12 @@ import android.widget.Toast;
 
 import com.tonyjhuang.trvphvt.R;
 
+import info.hoang8f.widget.FButton;
+
 /**
  * Created by tonyhuang on 7/27/14.
  */
-public class TrvpHvtPvd extends View {
+public class TrvpHvtPvd extends FButton {
     static SoundPool soundPool = new SoundPool(16, AudioManager.STREAM_MUSIC, 0);
     static int soundId = -1;
 

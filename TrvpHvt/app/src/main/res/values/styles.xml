@@ -2,6 +2,8 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowBackground">@color/fbutton_color_clouds</item>
         <!-- Customize your theme here. -->
     </style>
 
@@ -10,12 +12,14 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_margin">@dimen/trvphvtpvd_margin</item>
-        <item name="android:background">@android:color/holo_orange_dark</item>
         <item name="android:soundEffectsEnabled">false</item>
+        <item name="cornerRadius">4dp</item>
+        <item name="shadowHeight">2dp</item>
     </style>
 
     <style name="TrvpHvtPvd.Alt" parent="TrvpHvtPvd">
-        <item name="android:background">@android:color/holo_orange_light</item>
+        <item name="buttonColor">@color/fbutton_color_wet_asphalt</item>
+        <item name="shadowColor">@color/fbutton_color_midnight_blue</item>
     </style>
 
 </resources>
