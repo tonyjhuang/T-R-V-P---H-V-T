@@ -1,6 +1,5 @@
 package com.tonyjhuang.trvphvt;
 
-import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -9,7 +8,6 @@ import com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd;
 
 import java.util.List;
 
-import butterknife.InjectView;
 import butterknife.InjectViews;
 import butterknife.OnClick;
 
@@ -26,12 +24,6 @@ public class MainActivity extends ButterKnifeActivity {
             R.id.test_pad_8 })
     List<TrvpHvtPvd> trvpHvtPvds;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-    }
-
     protected int getLayoutResourceId() {
         return R.layout.activity_main;
     }
@@ -45,7 +37,7 @@ public class MainActivity extends ButterKnifeActivity {
             R.id.test_pad_7,
             R.id.test_pad_8 })
     public void tvpPvd(TrvpHvtPvd trvpHvtPvd) {
-        trvpHvtPvd.showToast();
+        trvpHvtPvd.plvyTrvpHvt();
     }
 
 
