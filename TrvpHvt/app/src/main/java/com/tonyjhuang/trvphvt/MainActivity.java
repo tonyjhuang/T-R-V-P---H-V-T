@@ -1,17 +1,51 @@
 package com.tonyjhuang.trvphvt;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.tonyjhuang.trvphvt.ButterKnife.ButterKnifeActivity;
+import com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd;
 
-public class MainActivity extends Activity {
+import java.util.List;
+
+import butterknife.InjectView;
+import butterknife.InjectViews;
+import butterknife.OnClick;
+
+
+public class MainActivity extends ButterKnifeActivity {
+
+    @InjectViews({ R.id.test_pad_1,
+            R.id.test_pad_2,
+            R.id.test_pad_3,
+            R.id.test_pad_4,
+            R.id.test_pad_5,
+            R.id.test_pad_6,
+            R.id.test_pad_7,
+            R.id.test_pad_8 })
+    List<TrvpHvtPvd> trvpHvtPvds;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    protected int getLayoutResourceId() {
+        return R.layout.activity_main;
+    }
+
+    @OnClick({ R.id.test_pad_1,
+            R.id.test_pad_2,
+            R.id.test_pad_3,
+            R.id.test_pad_4,
+            R.id.test_pad_5,
+            R.id.test_pad_6,
+            R.id.test_pad_7,
+            R.id.test_pad_8 })
+    public void tvpPvd(TrvpHvtPvd trvpHvtPvd) {
+        trvpHvtPvd.showToast();
     }
 
 

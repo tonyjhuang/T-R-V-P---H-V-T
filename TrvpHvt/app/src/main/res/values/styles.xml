@@ -5,4 +5,16 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="TrvpHvtPvd">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_margin">@dimen/trvphvtpvd_margin</item>
+        <item name="android:background">@android:color/holo_orange_dark</item>
+    </style>
+
+    <style name="TrvpHvtPvd.Alt" parent="TrvpHvtPvd">
+        <item name="android:background">@android:color/holo_orange_light</item>
+    </style>
+
 </resources>
