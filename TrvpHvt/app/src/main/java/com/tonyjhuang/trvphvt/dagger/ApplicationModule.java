@@ -3,8 +3,9 @@ package com.tonyjhuang.trvphvt.dagger;
 import android.content.Context;
 import android.view.LayoutInflater;
 
-import com.tonyjhuang.trvphvt.BPMManager;
+import com.tonyjhuang.trvphvt.time.BPMManager;
 import com.tonyjhuang.trvphvt.Trvpplication;
+import com.tonyjhuang.trvphvt.time.Tempo;
 
 import javax.inject.Singleton;
 
@@ -26,6 +27,12 @@ public class ApplicationModule {
     @Singleton
     BPMManager provideBPMManager(LayoutInflater layoutInflater) {
         return new BPMManager(layoutInflater);
+    }
+
+    @Provides
+    @Singleton
+    Tempo provideTempo(BPMManager bpmManager) {
+        return new Tempo(bpmManager);
     }
 
     @Provides

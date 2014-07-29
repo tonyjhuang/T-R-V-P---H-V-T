@@ -3,24 +3,24 @@ package com.tonyjhuang.trvphvt;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
-import com.tonyjhuang.trvphvt.butterknife.ButterKnifeActivity;
 import com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd;
-import com.tonyjhuang.trvphvt.dagger.ActivityModule;
 import com.tonyjhuang.trvphvt.dagger.DaggerActivity;
+import com.tonyjhuang.trvphvt.time.BPMManager;
+import com.tonyjhuang.trvphvt.time.Tempo;
 
 import java.util.List;
 
 import javax.inject.Inject;
 
 import butterknife.InjectViews;
-import dagger.ObjectGraph;
 
 
 public class MainActivity extends DaggerActivity {
     @Inject
     BPMManager bpmManager;
+    @Inject
+    Tempo tempo;
 
     @InjectViews({R.id.test_pad_1,
             R.id.test_pad_2,
@@ -37,6 +37,7 @@ public class MainActivity extends DaggerActivity {
         super.onCreate(icicle);
 
         for(TrvpHvtPvd pvd : trvpHvtPvds) {
+            pvd.setTempo(tempo);
             pvd.setOnTouchListener(pvd.getTrvpTouchListener());
         }
 
