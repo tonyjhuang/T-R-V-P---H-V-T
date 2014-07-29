@@ -73,7 +73,7 @@ public class TrvpHvtPvd extends FButton implements Tempo.TempoListener {
      */
     private void init(Context context) {
         if (soundId == -1)
-            soundId = soundPool.load(context, R.raw.hihat1, 1);
+            soundId = soundPool.load(context, R.raw.hihat2, 1);
     }
 
     public void tick() {

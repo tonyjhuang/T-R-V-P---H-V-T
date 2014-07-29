@@ -48,7 +48,6 @@ public class Tempo {
 
         public TempoTimer(int bpm, TempoListener tempoListener) {
             this.interval = tempoListener.getInterval();
-            Log.d("timer", "" + interval);
             this.tempoListener = tempoListener;
             schedule(incrementAndTick, 0, bpmToMillis(bpm));
         }
@@ -60,8 +59,6 @@ public class Tempo {
         TimerTask incrementAndTick = new TimerTask() {
             @Override
             public void run() {
-                Log.d("timertask", "" + interval);
-                Log.d("timertask", ""+ counter);
                 if ((counter++ % (interval) == 0))
                     tempoListener.tick();
             }

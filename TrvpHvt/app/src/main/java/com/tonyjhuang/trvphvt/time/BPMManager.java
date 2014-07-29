@@ -79,7 +79,8 @@ public class BPMManager {
                     .setPositiveButton("ok", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             bpm = bpmPicker.getValue();
-                            listener.onBPMChanged(bpm);
+                            if (listener != null)
+                                listener.onBPMChanged(bpm);
                         }
                     })
                     .setTitle("Set BPM");
