@@ -1,4 +1,4 @@
-package com.tonyjhuang.trvphvt.ButterKnife;
+package com.tonyjhuang.trvphvt.butterknife;
 
 import android.app.Activity;
 import android.os.Bundle;

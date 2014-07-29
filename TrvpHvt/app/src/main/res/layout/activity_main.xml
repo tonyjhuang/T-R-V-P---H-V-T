@@ -16,23 +16,23 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd
+        <com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd
             android:id="@+id/test_pad_1"
             style="@style/TrvpHvtPvd"
             app:toast="1" />
 
-        <com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd
+        <com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd
             android:id="@+id/test_pad_2"
             style="@style/TrvpHvtPvd.Alt"
             app:toast="2" />
 
-        <com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd
+        <com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd
             android:id="@+id/test_pad_3"
             style="@style/TrvpHvtPvd"
             app:toast="3"/>
 
 
-        <com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd
+        <com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd
             android:id="@+id/test_pad_4"
             style="@style/TrvpHvtPvd.Alt"
             app:toast="4"/>
@@ -44,22 +44,22 @@
         android:layout_weight="1"
         android:orientation="horizontal">
 
-        <com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd
+        <com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd
             android:id="@+id/test_pad_5"
             style="@style/TrvpHvtPvd.Alt"
             app:toast="5"/>
 
-        <com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd
+        <com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd
             android:id="@+id/test_pad_6"
             style="@style/TrvpHvtPvd"
             app:toast="6"/>
 
-        <com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd
+        <com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd
             android:id="@+id/test_pad_7"
             style="@style/TrvpHvtPvd.Alt"
             app:toast="7"/>
 
-        <com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd
+        <com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd
             android:id="@+id/test_pad_8"
             style="@style/TrvpHvtPvd"
             app:toast="8"/>

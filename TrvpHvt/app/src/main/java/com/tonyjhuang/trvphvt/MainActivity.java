@@ -1,43 +1,50 @@
 package com.tonyjhuang.trvphvt;
 
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-import com.tonyjhuang.trvphvt.ButterKnife.ButterKnifeActivity;
-import com.tonyjhuang.trvphvt.CustomViews.TrvpHvtPvd;
+import com.tonyjhuang.trvphvt.butterknife.ButterKnifeActivity;
+import com.tonyjhuang.trvphvt.customviews.TrvpHvtPvd;
+import com.tonyjhuang.trvphvt.dagger.ActivityModule;
+import com.tonyjhuang.trvphvt.dagger.DaggerActivity;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.InjectViews;
-import butterknife.OnClick;
+import dagger.ObjectGraph;
 
 
-public class MainActivity extends ButterKnifeActivity {
+public class MainActivity extends DaggerActivity {
+    @Inject
+    BPMManager bpmManager;
 
-    @InjectViews({ R.id.test_pad_1,
+    @InjectViews({R.id.test_pad_1,
             R.id.test_pad_2,
             R.id.test_pad_3,
             R.id.test_pad_4,
             R.id.test_pad_5,
             R.id.test_pad_6,
             R.id.test_pad_7,
-            R.id.test_pad_8 })
+            R.id.test_pad_8})
     List<TrvpHvtPvd> trvpHvtPvds;
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+
+        for(TrvpHvtPvd pvd : trvpHvtPvds) {
+            pvd.setOnTouchListener(pvd.getTrvpTouchListener());
+        }
+
+        Toast.makeText(this, "" + bpmManager.act(), Toast.LENGTH_SHORT).show();
+    }
 
     protected int getLayoutResourceId() {
         return R.layout.activity_main;
-    }
-
-    @OnClick({ R.id.test_pad_1,
-            R.id.test_pad_2,
-            R.id.test_pad_3,
-            R.id.test_pad_4,
-            R.id.test_pad_5,
-            R.id.test_pad_6,
-            R.id.test_pad_7,
-            R.id.test_pad_8 })
-    public void tvpPvd(TrvpHvtPvd trvpHvtPvd) {
-        trvpHvtPvd.plvyTrvpHvt();
     }
 
 
@@ -50,9 +57,6 @@ public class MainActivity extends ButterKnifeActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;

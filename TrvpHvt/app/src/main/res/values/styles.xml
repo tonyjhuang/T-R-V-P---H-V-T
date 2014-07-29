@@ -18,8 +18,7 @@
     </style>
 
     <style name="TrvpHvtPvd.Alt" parent="TrvpHvtPvd">
-        <item name="buttonColor">@color/fbutton_color_wet_asphalt</item>
-        <item name="shadowColor">@color/fbutton_color_midnight_blue</item>
+            <item name="buttonColor">@color/fbutton_color_wet_asphalt</item>
     </style>
 
 </resources>
