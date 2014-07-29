@@ -40,7 +40,6 @@ public class MainActivity extends DaggerActivity {
             pvd.setOnTouchListener(pvd.getTrvpTouchListener());
         }
 
-        Toast.makeText(this, "" + bpmManager.act(), Toast.LENGTH_SHORT).show();
     }
 
     protected int getLayoutResourceId() {
@@ -59,6 +58,7 @@ public class MainActivity extends DaggerActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == R.id.action_settings) {
+            bpmManager.showBPMDialog(this);
             return true;
         }
         return super.onOptionsItemSelected(item);

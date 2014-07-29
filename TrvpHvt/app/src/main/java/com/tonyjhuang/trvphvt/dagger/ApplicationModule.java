@@ -1,6 +1,7 @@
 package com.tonyjhuang.trvphvt.dagger;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 
 import com.tonyjhuang.trvphvt.BPMManager;
 import com.tonyjhuang.trvphvt.Trvpplication;
@@ -23,13 +24,18 @@ public class ApplicationModule {
 
     @Provides
     @Singleton
-    BPMManager provideBPMManager() {
-        return new BPMManager();
+    BPMManager provideBPMManager(LayoutInflater layoutInflater) {
+        return new BPMManager(layoutInflater);
     }
 
     @Provides
     @Singleton
     Context provideApplicationContext() {
         return application;
+    }
+
+    @Provides
+    LayoutInflater provideLayoutInflater() {
+        return (LayoutInflater) application.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 }
